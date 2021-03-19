@@ -152,8 +152,8 @@ else:  #this assumes that since the users input number wasn't positive or zero, 
 input()
 print("One more calibration needed.")
 def calibration_equation(x,y,z):
-   answer = (x+y+z)
-   return answer
+    answer = (x+y+z)
+    return answer
 def main():
     x = (input("Enter a number: "))
     while True:
@@ -214,13 +214,15 @@ def main():
                     user_solution = input("Invalid input. Please try again: ")
                 else:
                     break
-        while True:
-            try:
-                 user_solution = float(user_solution)
-            except ValueError:
-                 user_solution = input("Invalid input. Please try again: ")
-            else:
-                break
+        else:
+            user_solution = (input("Your answer was incorrect. Please try again: "))
+            while True:
+                try:
+                    user_solution = float(user_solution)
+                except ValueError:
+                    user_solution = input("Invalid input. Please try again: ")
+                else:
+                    break
     if float(user_solution) == math_equation():
         print("Congratulations on getting the answer correct!\nYour answer:", int(user_solution), "equals",math_equation())
 main()
